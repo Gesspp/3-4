@@ -31,7 +31,7 @@ sealed internal class odArray<T> : bArray, ILineArray
         Console.WriteLine("Введите значения массива:");
         for (int i = 0; i < array.Length; i++)
         {
-            array[i] = (T)(object)(Console.ReadLine());
+            array[i] = (T)(object)int.Parse(Console.ReadLine());
         }
     }
 

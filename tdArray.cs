@@ -8,6 +8,15 @@ sealed internal class tdArray<T> : bArray, ITDArray
     public tdArray(int rows, int columns, bool fillByUser = false) : base(fillByUser)
     {
         array = new T[rows, columns];
+
+        if (fillByUser)
+        {
+            userArray();
+        }
+        else
+        {
+            randomArray();
+        }
     }
 
     public void ReCreate(int rows, int columns)
@@ -24,7 +33,7 @@ sealed internal class tdArray<T> : bArray, ITDArray
             string[] values = Console.ReadLine().Split(' ');
             for (int j = 0; j < array.GetLength(1); j++)
             {
-                array[i, j] = (T)(object)values[j];
+                array[i, j] = (T)(object)int.Parse(values[j]);
             }
         }
     }
